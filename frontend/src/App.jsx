@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="flex justify-evenly bg-yellow-100 items-end">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -33,6 +33,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <h1 className="text-3xl font-bold underline">
+      Hello Tailwind!
+      </h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
