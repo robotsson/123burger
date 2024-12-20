@@ -24,11 +24,11 @@ namespace webapi.Migrations
 
             modelBuilder.Entity("webapi.Models.BurgerOrder", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
@@ -44,11 +44,11 @@ namespace webapi.Migrations
 
             modelBuilder.Entity("webapi.Models.BurgerProduct", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -70,7 +70,7 @@ namespace webapi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1L,
+                            Id = 1,
                             Image = "cheese.jpg",
                             Name = "Cheeseburger",
                             Price = 25.00m,
@@ -78,7 +78,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 2L,
+                            Id = 2,
                             Image = "dblcheese.jpg",
                             Name = "Double Cheeseburger",
                             Price = 40.00m,
@@ -86,7 +86,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 3L,
+                            Id = 3,
                             Image = "burger.jpg",
                             Name = "Hamburger",
                             Price = 20.00m,
@@ -94,7 +94,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 4L,
+                            Id = 4,
                             Image = "fries.jpg",
                             Name = "French fries",
                             Price = 15.00m,
@@ -102,7 +102,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 5L,
+                            Id = 5,
                             Image = "water.jpg",
                             Name = "Sparkling Water",
                             Price = 10.00m,
@@ -110,7 +110,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 6L,
+                            Id = 6,
                             Image = "nukacola.jpg",
                             Name = "Nuka-Cola",
                             Price = 15.00m,
@@ -118,7 +118,7 @@ namespace webapi.Migrations
                         },
                         new
                         {
-                            Id = 7L,
+                            Id = 7,
                             Image = "nukaorange.jpg",
                             Name = "Nuka-Orange",
                             Price = 15.00m,
@@ -128,17 +128,17 @@ namespace webapi.Migrations
 
             modelBuilder.Entity("webapi.Models.OrderItem", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<long>("BurgerOrderId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("BurgerOrderId")
+                        .HasColumnType("int");
 
-                    b.Property<long>("BurgerProductId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("BurgerProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -154,7 +154,7 @@ namespace webapi.Migrations
 
             modelBuilder.Entity("webapi.Models.OrderItem", b =>
                 {
-                    b.HasOne("webapi.Models.BurgerOrder", "BurgerOrder")
+                    b.HasOne("webapi.Models.BurgerOrder", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("BurgerOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -165,8 +165,6 @@ namespace webapi.Migrations
                         .HasForeignKey("BurgerProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("BurgerOrder");
 
                     b.Navigation("BurgerProduct");
                 });

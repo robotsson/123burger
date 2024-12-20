@@ -106,6 +106,8 @@ namespace webapi.Controllers
             return CreatedAtAction("GetBurgerProduct", new { id = burgerProduct.Id }, burgerProduct);
         }
 
+        // Typically restricted to Admin role
+        // [Authorize(Roles = "Admin")]
         // DELETE: api/Burger/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBurgerProduct(long id)
