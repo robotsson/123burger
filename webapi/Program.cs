@@ -1,6 +1,20 @@
+using webapi.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
+
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
+if( RuntimeInformation.IsOSPlatform(OSPlatform.Windows) )
+{
+    builder.Services.AddDbContext<BurgerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BurgerContextWindows") ?? throw new InvalidOperationException("Connection string 'BurgerContextWindows' not found.")));
+}
+else
+{
+    builder.Services.AddDbContext<BurgerContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BurgerContext") ?? throw new InvalidOperationException("Connection string 'BurgerContext' not found.")));    
+}
 
 // Add services to the container.
 builder.Services.AddCors(options =>
