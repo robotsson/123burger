@@ -51,7 +51,7 @@ namespace webapi.Controllers
 
         // GET: api/BurgerProducts/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BurgerProduct>> GetBurgerProduct(long id)
+        public async Task<ActionResult<BurgerProduct>> GetBurgerProduct(int id)
         {
             var burgerProduct = await _context.BurgerProducts.FindAsync(id);
 
@@ -67,7 +67,7 @@ namespace webapi.Controllers
         // PUT: api/Burger/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBurgerProduct(long id, BurgerProduct burgerProduct)
+        public async Task<IActionResult> PutBurgerProduct(int id, BurgerProduct burgerProduct)
         {
             if (id != burgerProduct.Id)
             {
@@ -110,7 +110,7 @@ namespace webapi.Controllers
         // [Authorize(Roles = "Admin")]
         // DELETE: api/Burger/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBurgerProduct(long id)
+        public async Task<IActionResult> DeleteBurgerProduct(int id)
         {
             var burgerProduct = await _context.BurgerProducts.FindAsync(id);
             if (burgerProduct == null)
@@ -124,7 +124,7 @@ namespace webapi.Controllers
             return NoContent();
         }
 
-        private bool BurgerProductExists(long id)
+        private bool BurgerProductExists(int id)
         {
             return _context.BurgerProducts.Any(e => e.Id == id);
         }

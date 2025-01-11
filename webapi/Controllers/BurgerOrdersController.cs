@@ -28,9 +28,9 @@ namespace webapi.Controllers
         }
 
 
-        // GET: api/BurgerOrders/Make
-        [HttpGet]
-        public async Task<ActionResult<BurgerOrder>> GetMake()
+        // GET: api/BurgerOrders/PlaceFakeOrder
+        [HttpGet("PlaceFakeOrder")]
+        public async Task<ActionResult<BurgerOrder>> GetPlaceFakeOrder()
         {
             BurgerOrder BurgerOrder = new BurgerOrder {  OrderDate = DateTime.Now, OrderTotal = 100.00m };
 
@@ -48,7 +48,7 @@ namespace webapi.Controllers
                 new OrderItem { Quantity = 1, BurgerProductId = BurgerProducts[2].Id, BurgerProduct = BurgerProducts[2], BurgerOrderId = BurgerOrder.Id } );
 
 
-            await _context.BurgerOrders.AddAsync(BurgerOrder);
+            _context.BurgerOrders.Add(BurgerOrder);
             await _context.SaveChangesAsync();
 
             return BurgerOrder;
@@ -57,7 +57,7 @@ namespace webapi.Controllers
 
         // GET: api/BurgerOrders/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BurgerOrder>> GetBurgerOrder(long id)
+        public async Task<ActionResult<BurgerOrder>> GetBurgerOrder(int id)
         {
             var burgerOrder = await _context.BurgerOrders.FindAsync(id);
 
@@ -72,7 +72,7 @@ namespace webapi.Controllers
         // PUT: api/BurgerOrders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutBurgerOrder(long id, BurgerOrder burgerOrder)
+        public async Task<IActionResult> PutBurgerOrder(int id, BurgerOrder burgerOrder)
         {
             if (id != burgerOrder.Id)
             {
@@ -114,7 +114,7 @@ namespace webapi.Controllers
 
         // DELETE: api/BurgerOrder/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBurgerOrder(long id)
+        public async Task<IActionResult> DeleteBurgerOrder(int id)
         {
             var burgerOrder = await _context.BurgerOrders.FindAsync(id);
             if (burgerOrder == null)
@@ -129,7 +129,7 @@ namespace webapi.Controllers
         }
 
 
-        private bool BurgerOrderExists(long id)
+        private bool BurgerOrderExists(int id)
         {
             return _context.BurgerOrders.Any(e => e.Id == id);
         }

@@ -12,7 +12,7 @@ using webapi.Models;
 namespace webapi.Migrations
 {
     [DbContext(typeof(BurgerContext))]
-    [Migration("20241220164214_BurgerDbInit")]
+    [Migration("20250111204455_BurgerDbInit")]
     partial class BurgerDbInit
     {
         /// <inheritdoc />
