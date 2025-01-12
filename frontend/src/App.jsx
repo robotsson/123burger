@@ -11,14 +11,41 @@ function App() {
   // .then(json=>console.log(json))
   
   async function fetchjson() {
-    const response = await fetch('https://localhost:7210/weatherforecast');
+    const response = await fetch('https://localhost:7210/api/burgerproducts');
     const data = await response.json();
     return data;
+  }
+
+  async function postjson() {
+    try {
+      const response = await fetch('https://localhost:7210/api/burgerorders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          orderTotal: 250,
+          orderDate: (new Date()).toISOString(),
+          orderItems: [
+            {
+              quantity: 10,
+              burgerProductId: 1
+            }
+          ]
+        })
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch(error) {
+      console.log(error)
+    } 
   }
 
   fetchjson().then(data => {
     console.log(data); 
   });
+
+  postjson();
 
   console.log("hello console");
 

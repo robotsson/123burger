@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -39,13 +40,13 @@ namespace webapi.Controllers
                                                    await _context.BurgerProducts.FindAsync(6) ]; 
 
             BurgerOrder.OrderItems.Add( 
-                new OrderItem { Quantity = 1, BurgerProductId = BurgerProducts[0].Id, BurgerProduct = BurgerProducts[0], BurgerOrderId = BurgerOrder.Id } );
+                new OrderItem { Quantity = 1, BurgerProductId = BurgerProducts[0].Id, BurgerOrderId = BurgerOrder.Id } );
             
             BurgerOrder.OrderItems.Add( 
-                new OrderItem {Quantity = 1, BurgerProductId = BurgerProducts[1].Id, BurgerProduct = BurgerProducts[1], BurgerOrderId = BurgerOrder.Id } );
+                new OrderItem {Quantity = 1, BurgerProductId = BurgerProducts[1].Id, BurgerOrderId = BurgerOrder.Id } );
 
             BurgerOrder.OrderItems.Add( 
-                new OrderItem { Quantity = 1, BurgerProductId = BurgerProducts[2].Id, BurgerProduct = BurgerProducts[2], BurgerOrderId = BurgerOrder.Id } );
+                new OrderItem { Quantity = 1, BurgerProductId = BurgerProducts[2].Id, BurgerOrderId = BurgerOrder.Id } );
 
 
             _context.BurgerOrders.Add(BurgerOrder);
@@ -66,9 +67,13 @@ namespace webapi.Controllers
                 return NotFound();
             }
 
+            // eagerly load
+            var orderitems = _context.BurgerOrders.Include( order => order.OrderItems).ToList();
+
             return burgerOrder;
         }
 
+        // PUT creates or modifies if it already exists, POST always creates
         // PUT: api/BurgerOrders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]

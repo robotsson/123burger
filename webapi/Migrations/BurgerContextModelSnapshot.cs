@@ -147,8 +147,6 @@ namespace webapi.Migrations
 
                     b.HasIndex("BurgerOrderId");
 
-                    b.HasIndex("BurgerProductId");
-
                     b.ToTable("OrderItems");
                 });
 
@@ -159,14 +157,6 @@ namespace webapi.Migrations
                         .HasForeignKey("BurgerOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("webapi.Models.BurgerProduct", "BurgerProduct")
-                        .WithMany()
-                        .HasForeignKey("BurgerProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BurgerProduct");
                 });
 
             modelBuilder.Entity("webapi.Models.BurgerOrder", b =>

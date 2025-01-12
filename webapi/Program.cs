@@ -22,8 +22,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy  =>
                       {
-                          policy.WithOrigins("http://localhost:5173",
-                                              "http://www.contoso.com");
+                          policy.WithOrigins("https://localhost:7210",
+                                             "http://localhost:5173")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
                       });
 });
 

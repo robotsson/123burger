@@ -26,6 +26,11 @@ public class BurgerContext : DbContext
             .HasPrecision(18, 2); 
 
 
+        // modelBuilder.Entity<BurgerProduct>()
+        //        .Property(b=>b.Id)
+        //                 .ValueGeneratedNever()
+        //                 .HasColumnType("int");
+
         modelBuilder.Entity<BurgerProduct>().HasData(
             new BurgerProduct { Id = 1, Name = "Cheeseburger", Price = 25.00m, Type = "Burger", Image="cheese.jpg" },
             new BurgerProduct { Id = 2, Name = "Double Cheeseburger", Price = 40.00m, Type = "Burger", Image="dblcheese.jpg" },

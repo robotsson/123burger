@@ -62,12 +62,6 @@ namespace webapi.Migrations
                         principalTable: "BurgerOrders",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_OrderItems_BurgerProducts_BurgerProductId",
-                        column: x => x.BurgerProductId,
-                        principalTable: "BurgerProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -88,24 +82,19 @@ namespace webapi.Migrations
                 name: "IX_OrderItems_BurgerOrderId",
                 table: "OrderItems",
                 column: "BurgerOrderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_BurgerProductId",
-                table: "OrderItems",
-                column: "BurgerProductId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "BurgerProducts");
+
+            migrationBuilder.DropTable(
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
                 name: "BurgerOrders");
-
-            migrationBuilder.DropTable(
-                name: "BurgerProducts");
         }
     }
 }

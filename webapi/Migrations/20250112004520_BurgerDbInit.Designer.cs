@@ -12,7 +12,7 @@ using webapi.Models;
 namespace webapi.Migrations
 {
     [DbContext(typeof(BurgerContext))]
-    [Migration("20250111204455_BurgerDbInit")]
+    [Migration("20250112004520_BurgerDbInit")]
     partial class BurgerDbInit
     {
         /// <inheritdoc />
@@ -150,8 +150,6 @@ namespace webapi.Migrations
 
                     b.HasIndex("BurgerOrderId");
 
-                    b.HasIndex("BurgerProductId");
-
                     b.ToTable("OrderItems");
                 });
 
@@ -162,14 +160,6 @@ namespace webapi.Migrations
                         .HasForeignKey("BurgerOrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("webapi.Models.BurgerProduct", "BurgerProduct")
-                        .WithMany()
-                        .HasForeignKey("BurgerProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BurgerProduct");
                 });
 
             modelBuilder.Entity("webapi.Models.BurgerOrder", b =>
