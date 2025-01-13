@@ -1,13 +1,13 @@
 import './OrderPage.css';
 import { Link } from 'react-router-dom';
-import OrderSummary from './OrderSummary';
+import OrderSummaryBig from './OrderSummaryBig';
 
 function ConfirmPayment() 
 {
 
   return (
     <>
-      <OrderSummary />
+      <OrderSummaryBig />
 
       <div className="flex-end">
         <Link className="bbb" to="/OrderConfirmed">

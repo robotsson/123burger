@@ -4,14 +4,15 @@ import './App.css';
 import OrderPage from './OrderPage';
 import ConfirmPayment from './ConfirmPayment';
 import OrderConfirmed from './OrderConfirmed';
+import { OrderProvider } from './OrderContext';
 
 function App() {
   const [count, setCount] = useState(0)
-
+  
   console.log("hello console");
 
   return (
-    <>
+    <OrderProvider>
       <Router future={{v7_startTransition: true, v7_relativeSplatPath: true}}>
         {/* page */}
         <div className="p-2 flex flex-col justify-between h-full w-screen">
@@ -42,7 +43,7 @@ function App() {
           </div>
         </div>
       </Router>    
-    </>
+    </OrderProvider>
   )
 };
 

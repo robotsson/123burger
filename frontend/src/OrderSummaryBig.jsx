@@ -1,6 +1,6 @@
 import { useOrderContext } from './OrderContext';
 
-function OrderSummary() 
+export default function OrderSummaryBig() 
 {
   
   const { orderItems } = useOrderContext();   
@@ -24,11 +24,11 @@ function OrderSummary()
 
   <div className="flex flex-col">
 
-    <div className="flex flex-row justify-evenly mt-3 bg-blue-100 shadow-md rounded-lg">
+    <div className="flex flex-row flex-grow justify-evenly mt-3 bg-blue-100 shadow-md rounded-lg">
       <div className="text-3xl self-start font-bold px-5 py-5">
         Order:
       </div>
-      <div className="flex flex-col h-40 text-left px-5 py-5 overflow-y-auto">
+      <div className="flex flex-col h-80 text-left px-5 py-5 overflow-y-auto">
         { orderItems.map((item, index) => (
             <div key={index}>
               {item.quantity} {item.name} {item.price} € 
@@ -45,4 +45,3 @@ function OrderSummary()
 
 }
 
-export default OrderSummary;
