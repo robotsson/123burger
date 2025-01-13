@@ -1,35 +1,26 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './OrderPage.css'
-
+import './OrderPage.css';
+import { Link } from 'react-router-dom';
+import OrderConfirmed from './OrderConfirmed';
+import Products from './Products';
+import OrderSummary from './OrderSummary';
 
 function OrderPage() 
 {
 
   return (
     <>
-      {/* product selector */}
-      <div className="flex flex-col bg-green-100 shadow-md rounded-lg">
-        <div className="flex flex-row justify-center">
-          <h1>&#127828;</h1><h1>&#127828;</h1><h1>&#127828;</h1><h1>&#127828;</h1><p></p>
-        </div>
-        <div className="flex flex-row justify-center">
-          <h1>&#127839;</h1><h1>&#127839;</h1><h1>&#127839;</h1>
-        </div>
-        <div className="flex flex-row justify-center">
-          <h1>&#129380;</h1><h1>&#129380;</h1><h1>&#129380;</h1><h1>&#129380;</h1><h1>&#129380;</h1>
-        </div>
-      </div>
-      {/* order summary */}
-      <div className="flex flex-row bg-purple-100 shadow-md rounded-lg">
-        <b>Order summary:</b><br></br>
-        1 cheese burger<br></br>
-        1 french fries<br></br>
-        1 large coca-cola zero<br></br>
-
-        <div className="bg-red-200 rounded-lg">
-          <h1>Pay</h1>
-        </div>
+      <Products />
+      
+      <OrderSummary />
+      
+      <div className="flex-end">
+        <Link className="bbb" to="/PayOrder">
+          <div className="bg-red-200 rounded-lg mt-3 py-4 self-center shadow-md">
+            <span className="text-2xl font-bold self-center">Pay</span>
+          </div>
+        </Link>
       </div>
     </>
   )

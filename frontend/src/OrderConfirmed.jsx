@@ -1,16 +1,17 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './OrderConfirmed.css'
-
+import OrderSummary from './OrderSummary';
 
 function OrderConfirmed() 
 {
 
   return (
     <>
-    <div className="flex justify-evenly bg-blue-100 items-end">
-        Thank you, order received.
-    </div>
+      <OrderSummary />
+      
+      <div className="flex flex-col flex-grow rounded-lg justify-evenly mt-3 text-3xl font-bold bg-green-100 items-center shadow-md">
+          Thank you, order received.<br></br><br></br>
+          Your order is #123
+      </div>
     </>
   )
 }
