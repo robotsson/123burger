@@ -4,8 +4,6 @@ import './App.css';
 import OrderPage from './OrderPage';
 import ConfirmPayment from './ConfirmPayment';
 import OrderConfirmed from './OrderConfirmed';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 
 function App() {
   const [count, setCount] = useState(0)

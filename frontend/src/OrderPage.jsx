@@ -13,7 +13,7 @@ function OrderPage()
     <>
       <Products />
       
-      <OrderSummary />
+      <OrderSummary /> 
       
       <div className="flex-end">
         <Link className="bbb" to="/PayOrder">

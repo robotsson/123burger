@@ -7,7 +7,7 @@ function Products()
 
     <div className="flex flex-col flex-grow bg-green-100 shadow-md rounded-lg">
       
-      <div class="grid grid-cols-5 mt-3 gap-4">
+      <div className="grid grid-cols-5 mt-3 gap-4">
         <Product name={"Hamburger"}/>
         <Product name={"Cheeseburger"}/>
         <Product name={"Dbl Cheese"}/>
