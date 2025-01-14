@@ -20,11 +20,11 @@ export default function BurgerApp() {
           {/* page header */}
           <div className="bg-white h-24 mb-3 w-full">
             <div className="flex w-full h-full justify-center items-center">
-              <h1 className="text-purple-600 text-center">
+              <h1 className="text-purple-600 font-bold text-center">
                 &#127828;&ensp;
-                <Link className="aaa" to="/">1</Link>
-                <Link className="bbb" to="/PayOrder">2</Link>
-                <Link className="bbb" to="/OrderConfirmed">3</Link>-Burger&ensp;&#127828;
+                <Link className="font-bold" to="/">1</Link>
+                <Link className="font-bold" to="/PayOrder">2</Link>
+                <Link className="font-bold" to="/OrderConfirmed">3</Link>-Burger&ensp;&#127828;
               </h1>
             </div>
           </div>
@@ -36,6 +36,15 @@ export default function BurgerApp() {
               <Route path="/PayOrder" element={<ConfirmPayment />} />
               <Route path="/OrderConfirmed" element={<OrderConfirmed />} />
             </Routes>
+          </div>
+
+          {/* secret footer */}
+          <div className="flex flex-row bg-white my-2">
+            <h1 className="text-white text-center">
+              <Link className="text-white" to="/">1. Products</Link>&ensp;
+              <Link className="text-white" to="/">2. Pay Order</Link>&ensp;
+              <Link className="text-white" to="/">3. Confirmed</Link>
+            </h1>
           </div>
 
         </div>

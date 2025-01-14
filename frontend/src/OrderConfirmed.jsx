@@ -14,7 +14,7 @@ function OrderConfirmed()
           Your order is #{orderId}
       </div>
 
-      <OrderSummary  />
+      <OrderSummary bottommargin="mb-2" />
     </>
   )
 }
