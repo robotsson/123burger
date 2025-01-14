@@ -69,13 +69,21 @@ namespace webapi.Migrations
                 columns: new[] { "Id", "Image", "Name", "Price", "Type" },
                 values: new object[,]
                 {
-                    { 1, "cheese.jpg", "Cheeseburger", 25.00m, "Burger" },
-                    { 2, "dblcheese.jpg", "Double Cheeseburger", 40.00m, "Burger" },
-                    { 3, "burger.jpg", "Hamburger", 20.00m, "Burger" },
-                    { 4, "fries.jpg", "French fries", 15.00m, "Side Order" },
-                    { 5, "water.jpg", "Sparkling Water", 10.00m, "Drink" },
-                    { 6, "nukacola.jpg", "Nuka-Cola", 15.00m, "Drink" },
-                    { 7, "nukaorange.jpg", "Nuka-Orange", 15.00m, "Drink" }
+                    { 1, "dblcheese.jpg", "Double Cheeseburger", 4.00m, "Burger" },
+                    { 2, "cheese.jpg", "Cheeseburger", 2.50m, "Burger" },
+                    { 3, "burger.jpg", "Hamburger", 2.00m, "Burger" },
+                    { 4, "chickenburger.jpg", "Chicken burger", 3.00m, "Burger" },
+                    { 5, "veggieburger.jpg", "Veggie burger", 3.00m, "Burger" },
+                    { 6, "fries.jpg", "French fries", 1.50m, "Side Order" },
+                    { 7, "cheesefries.jpg", "Cheese fries", 2.00m, "Side Order" },
+                    { 8, "mayodip.jpg", "Mayo dip", 0.50m, "Side Order" },
+                    { 9, "garlicdip.jpg", "Garlic dip", 0.50m, "Side Order" },
+                    { 10, "guacamole.jpg", "Guacamole", 1.00m, "Side Order" },
+                    { 11, "cocacola.jpg", "Coca-cola", 1.00m, "Drink" },
+                    { 12, "cokezero.jpg", "Coke zero", 1.00m, "Drink" },
+                    { 13, "fanta.jpg", "Fanta", 1.00m, "Drink" },
+                    { 14, "sprite.jpg", "Sprite", 1.00m, "Drink" },
+                    { 15, "drpepper.jpg", "Dr Pepper", 1.00m, "Drink" }
                 });
 
             migrationBuilder.CreateIndex(
