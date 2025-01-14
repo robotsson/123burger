@@ -56,7 +56,7 @@ export default function SelectProducts()
         <OrderSummary height="h-42" rightmargin="mr-2"/> 
     
         <Link className="" to="/PayOrder">
-          <div className="bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
+          <div className="duration-100 active:scale-95 hover:bg-green-100 hover:border-slate-600 bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
             Pay
           </div>
         </Link>

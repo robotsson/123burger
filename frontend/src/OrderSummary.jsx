@@ -35,7 +35,7 @@ export default function OrderSummary({bottommargin,rightmargin})
         ))}
       </div>
 
-      <div className="flex flex-col text-3xl font-bold px-5 py-5 text-slate-700 w-52">
+      <div className="flex flex-col text-3xl font-bold px-5 py-5 text-slate-700 w-56">
         <span>Total:</span><br></br>
         <span className="text-5xl">{total} €</span>
       </div>

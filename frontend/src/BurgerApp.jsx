@@ -41,9 +41,9 @@ export default function BurgerApp() {
           {/* secret footer */}
           <div className="flex flex-row bg-white my-2">
             <h1 className="text-white text-center">
-              <Link className="text-white" to="/">1. Products</Link>&ensp;
-              <Link className="text-white" to="/">2. Pay Order</Link>&ensp;
-              <Link className="text-white" to="/">3. Confirmed</Link>
+              <Link className="text-white hover:text-slate-100" to="/">1. Products</Link>&ensp;
+              <Link className="text-white hover:text-slate-100" to="/PayOrder">2. Pay Order</Link>&ensp;
+              <Link className="text-white hover:text-slate-100" to="/OrderConfirmed">3. Confirmed</Link>
             </h1>
           </div>
 

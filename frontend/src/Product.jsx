@@ -27,9 +27,10 @@ export default function Product({id, name, price})
   }
 
   return (
-    <div className="rounded-lg border shadow-md bg-white-200 h-40" onClick={productClickHandler}>
+    <div className="duration-100 hover:bg-slate-50 hover:border-slate-400 active:scale-95 rounded-lg border shadow-md bg-white-200 h-40" onClick={productClickHandler}>
       {`${name} ${price?(price+" €"):""}`}
     </div>
   )
 }
+
 
