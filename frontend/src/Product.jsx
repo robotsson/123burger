@@ -1,6 +1,6 @@
 import { useOrderContext } from './OrderContext';
 
-export default function Product({index, name, price}) 
+export default function Product({id, name, price}) 
 {
   const { orderItems, setOrderItems } = useOrderContext();   
 
@@ -16,18 +16,18 @@ export default function Product({index, name, price})
     }
     else if( name!="" )
     {
-      var newObject = { name: name, price: price, quantity: 1 };
+      var newObject = { id: id, name: name, price: price, quantity: 1 };
       newOrderItems.push( newObject );
     }
 
     console.log(newOrderItems);
-    console.log(name +" "+ price);
+    console.log(id +" "+ name +" "+ price);
 
     setOrderItems(newOrderItems);
   }
 
   return (
-    <div className="rounded-lg shadow-md bg-blue-200 h-40" onClick={productClickHandler}>
+    <div className="rounded-lg border shadow-md bg-white-200 h-40" onClick={productClickHandler}>
       {`${name} ${price?(price+" €"):""}`}
     </div>
   )

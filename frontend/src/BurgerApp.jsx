@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
+import './BurgerApp.css';
 import SelectProducts from './SelectProducts';
 import ConfirmPayment from './ConfirmPayment';
 import OrderConfirmed from './OrderConfirmed';
 import { OrderProvider } from './OrderContext';
 
-function App() {
+export default function BurgerApp() {
   const [count, setCount] = useState(0)
   
   console.log("hello console");
@@ -18,10 +18,13 @@ function App() {
         <div className="p-2 flex flex-col justify-between h-full w-screen">
           
           {/* page header */}
-          <div className="bg-purple-100 shadow-md rounded-lg mb-3 w-full">
-            <div className="flex w-full">
-              <h1 className="text-purple-600 self-center w-full">
-              &#127828; 123-Burger &#127828;
+          <div className="bg-white h-24 mb-3 w-full">
+            <div className="flex w-full h-full justify-center items-center">
+              <h1 className="text-purple-600 text-center">
+                &#127828;&ensp;
+                <Link className="aaa" to="/">1</Link>
+                <Link className="bbb" to="/PayOrder">2</Link>
+                <Link className="bbb" to="/OrderConfirmed">3</Link>-Burger&ensp;&#127828;
               </h1>
             </div>
           </div>
@@ -35,16 +38,8 @@ function App() {
             </Routes>
           </div>
 
-          {/* footer, only needed during dev */}
-          {/* <div className="flex mt-3 justify-evenly bg-yellow-100 shadow-md rounded-lg">
-            <Link className="aaa" to="/">1. Products</Link>
-            <Link className="bbb" to="/PayOrder">2. Pay Order</Link> 
-            <Link className="ccf" to="/OrderConfirmed">3. Order Sent</Link>          
-          </div> */}
         </div>
       </Router>    
     </OrderProvider>
   )
 };
-
-export default App;

@@ -1,6 +1,6 @@
 import { useOrderContext } from './OrderContext';
 
-export default function OrderSummary({height="h-48"}) 
+export default function OrderSummary({height,rightmargin}) 
 {
   
   const { orderItems } = useOrderContext();   
@@ -21,12 +21,12 @@ export default function OrderSummary({height="h-48"})
 
   return (
 
-    <div className="flex flex-row flex-grow justify-evenly bg-blue-100 shadow-md rounded-lg">
-      <div className="text-3xl font-bold px-10 py-5">
+    <div className={`flex flex-row flex-grow justify-evenly bg-white border shadow-md rounded-lg ${rightmargin}`}>
+      <div className="text-3xl font-bold  py-4 text-slate-700 w-48">
         Order:
       </div>
 
-      <div className={`flex flex-grow bg-blue-100 flex-col mx-5 px-5 py-5 overflow-y-auto ${height}`}>
+      <div className={`flex flex-grow flex-col mx-5 px-5 py-5 overflow-y-auto ${height}`}>
         {orderItems.map((item, index) => (
           <div key={index} className="flex justify-between">
             <span>{item.quantity} {item.name}</span>
@@ -35,10 +35,11 @@ export default function OrderSummary({height="h-48"})
         ))}
       </div>
 
-      <div className="text-3xl font-bold px-10 py-5 text-right">
-        Total:<br />
-        {total} €
+      <div className="flex flex-col text-3xl font-bold px-5 py-5 text-right text-slate-700 w-52">
+        <span>Total:</span><br></br>
+        <span className="text-5xl">{total} €</span>
       </div>
+
     </div>
 
   );

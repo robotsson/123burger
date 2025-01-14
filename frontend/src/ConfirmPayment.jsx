@@ -2,22 +2,20 @@ import './SelectProducts.css';
 import { Link } from 'react-router-dom';
 import OrderSummary from './OrderSummary';
 
-function ConfirmPayment() 
+export default function ConfirmPayment() 
 {
 
   return (
     <>
-      <OrderSummary height="h-80" />
+      <OrderSummary />
 
       <div className="flex-end">
         <Link className="bbb" to="/OrderConfirmed">
-          <div className="bg-red-200 rounded-lg mt-3 py-4 self-center shadow-md">
-            <span className="text-2xl font-bold self-center">Confirm Payment</span>
+          <div className="bg-green-50 border-2 border-green-600 rounded-lg mt-3 py-4 self-center shadow-md h-32">
+            <span className="text-2xl font-bold self-center text-slate-700">Confirm Payment</span>
           </div>
         </Link>
       </div>
     </>
   )
 }
-
-export default ConfirmPayment;

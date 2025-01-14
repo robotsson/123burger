@@ -6,37 +6,36 @@ import { useState, useEffect } from 'react';
 
 export default function SelectProducts() 
 {
-  var emptyProductList = [ { name:"", price:0 }, { name:"", price:0 }, { name:"", price:0 }, 
-                           { name:"", price:0 }, { name:"", price:0 }, { name:"", price:0 },
-                           { name:"", price:0 }, { name:"", price:0 }, { name:"", price:0 },
-                           { name:"", price:0 }, { name:"", price:0 }, { name:"", price:0 },
-                           { name:"", price:0 }, { name:"", price:0 }, { name:"", price:0 }
+  var emptyProductList = [ { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
+                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
+                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
+                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 },
+                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }
                          ];
  
-    // Something like what api/burgerproducts returns
-    // var productList = [
-    //   { name: "Hamburger", price: 3},
-    //   { name: "Cheeseburger", price: 4 },
-    //   { name: "Dbl Cheese", price: 5 },
-    //   { name: "Chicken burger", price: 4 },
-    //   { name: "Veg burger", price: 4 },
-      
-    //   { name: "French fries", price: 3 },
-    //   { name: "Cheese fries", price: 4 },
-    //   { name: "Mayo dip", price: 1 },
-    //   { name: "Garlic dip", price: 1 },
-    //   { name: "Guacamole", price: 1.5 },
+  // what /api/burgerproduct returns
+  // var productList = [
+  //   { id: 1, name: "Double Cheeseburger", price: 4, type: "Burger", image: "dblcheese.jpg" },
+  //   { id: 2, name: "Cheeseburger", price: 2.5, type: "Burger", image: "cheese.jpg" },
+  //   { id: 3, name: "Hamburger", price: 2, type: "Burger", image: "burger.jpg" },
+  //   { id: 4, name: "Chicken burger", price: 3, type: "Burger", image: "chickenburger.jpg" },
+  //   { id: 5, name: "Veggie burger", price: 3, type: "Burger", image: "veggieburger.jpg" },
+  //   { id: 6, name: "French fries", price: 1.5, type: "Side Order", image: "fries.jpg" },
+  //   { id: 7, name: "Cheese fries", price: 2, type: "Side Order", image: "cheesefries.jpg" },
+  //   { id: 8, name: "Mayo dip", price: 0.5, type: "Side Order", image: "mayodip.jpg" },
+  //   { id: 9, name: "Garlic dip", price: 0.5, type: "Side Order", image: "garlicdip.jpg" },
+  //   { id: 10, name: "Guacamole", price: 1, type: "Side Order", image: "guacamole.jpg" },
+  //   { id: 11, name: "Coca-cola", price: 1, type: "Drink", image: "cocacola.jpg" },
+  //   { id: 12, name: "Coke zero", price: 1, type: "Drink", image: "cokezero.jpg" },
+  //   { id: 13, name: "Fanta", price: 1, type: "Drink", image: "fanta.jpg" },
+  //   { id: 14, name: "Sprite", price: 1, type: "Drink", image: "sprite.jpg" },
+  //   { id: 15, name: "Dr Pepper", price: 1, type: "Drink", image: "drpepper.jpg" }
+  // ];
 
-    //   { name: "Coca-cola", price: 2 },
-    //   { name: "Coke zero", price: 2 },
-    //   { name: "Fanta", price: 2 },
-    //   { name: "Sprite", price: 2 },
-    //   { name: "Dr Pepper", price: 2 }
-    // ];
                          
   const [productList, setProductList] = useState(emptyProductList)
 
-  useEffect(() => {
+  useEffect( () => {
     fetch('https://localhost:7210/api/burgerproducts')
       .then(response => {
         if (!response.ok) {
@@ -46,21 +45,24 @@ export default function SelectProducts()
       })
       .then(data => setProductList(data))
       .catch(error => console.error('There has been a problem with your fetch operation:', error));
-  }, []);
+  }, [] );
 
   return (
+
     <>
       <Products products={productList}/>
       
-      <OrderSummary/> 
-      
-      <div className="flex-end">
-        <Link className="bbb" to="/PayOrder">
-          <div className="bg-red-200 rounded-lg mt-3 py-4 self-center shadow-md">
-            <span className="text-2xl font-bold self-center">Pay</span>
-          </div>
-        </Link>
+      <div className="flex flex-row"> 
+        <OrderSummary height="h-42" rightmargin="mr-2"/> 
+    
+        <Link className="" to="/PayOrder">
+  <div className="bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
+    Pay
+  </div>
+</Link>
       </div>
+
+  
     </>
   )
 }
