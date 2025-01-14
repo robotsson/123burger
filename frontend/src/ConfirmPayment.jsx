@@ -1,4 +1,4 @@
-import './OrderPage.css';
+import './SelectProducts.css';
 import { Link } from 'react-router-dom';
 import OrderSummary from './OrderSummary';
 

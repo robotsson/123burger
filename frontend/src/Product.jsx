@@ -14,7 +14,7 @@ export default function Product({index, name, price})
     {
       newOrderItems[indexOf].quantity++;
     }
-    else 
+    else if( name!="" )
     {
       var newObject = { name: name, price: price, quantity: 1 };
       newOrderItems.push( newObject );
@@ -28,7 +28,7 @@ export default function Product({index, name, price})
 
   return (
     <div className="rounded-lg shadow-md bg-blue-200 h-40" onClick={productClickHandler}>
-      {name} {price} €
+      {`${name} ${price?(price+" €"):""}`}
     </div>
   )
 }

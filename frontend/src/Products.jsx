@@ -1,15 +1,7 @@
 import Product from './Product';
 
-function Products() 
+function Products({products}) 
 {
-  async function fetchjson() {
-    const response = await fetch('https://localhost:7210/api/burgerproducts');
-    const data = await response.json();
-
-    console.log(data); 
-  }
-
-  fetchjson();
 
   // TODO get this from db/web api with fetch
   var productList = [
@@ -32,10 +24,11 @@ function Products()
                       { name: "Dr Pepper", price: 2 }
                     ];
 
+
   return (
-    <div className="flex flex-col flex-grow ">
-      <div className="grid grid-cols-5 mt-3 gap-4">
-        { productList.map((item, index) => (
+    <div className="flex flex-col ">
+      <div className="grid grid-cols-5 mt-3 mb-3 gap-4">
+        { products.map((item, index) => (
             <Product key={index} name={item.name} price={item.price} />
         ))}
       </div>

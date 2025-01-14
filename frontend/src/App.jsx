@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import OrderPage from './OrderPage';
+import SelectProducts from './SelectProducts';
 import ConfirmPayment from './ConfirmPayment';
 import OrderConfirmed from './OrderConfirmed';
 import { OrderProvider } from './OrderContext';
@@ -29,18 +29,18 @@ function App() {
           {/* pages */}
           <div className="flex flex-grow flex-col">
             <Routes>        
-              <Route path="/" element={<OrderPage />} /> 
+              <Route path="/" element={<SelectProducts />} /> 
               <Route path="/PayOrder" element={<ConfirmPayment />} />
               <Route path="/OrderConfirmed" element={<OrderConfirmed />} />
             </Routes>
           </div>
 
-          {/* footer */}
-          <div className="flex mt-3 justify-evenly bg-yellow-100 shadow-md rounded-lg">
+          {/* footer, only needed during dev */}
+          {/* <div className="flex mt-3 justify-evenly bg-yellow-100 shadow-md rounded-lg">
             <Link className="aaa" to="/">1. Products</Link>
             <Link className="bbb" to="/PayOrder">2. Pay Order</Link> 
             <Link className="ccf" to="/OrderConfirmed">3. Order Sent</Link>          
-          </div>
+          </div> */}
         </div>
       </Router>    
     </OrderProvider>

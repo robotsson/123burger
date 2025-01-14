@@ -1,6 +1,6 @@
 import { useOrderContext } from './OrderContext';
 
-export default function OrderSummary({height="h-40"}) 
+export default function OrderSummary({height="h-48"}) 
 {
   
   const { orderItems } = useOrderContext();   
@@ -21,7 +21,7 @@ export default function OrderSummary({height="h-40"})
 
   return (
 
-    <div className="flex flex-row justify-evenly bg-blue-100 shadow-md rounded-lg">
+    <div className="flex flex-row flex-grow justify-evenly bg-blue-100 shadow-md rounded-lg">
       <div className="text-3xl font-bold px-10 py-5">
         Order:
       </div>
