@@ -71,17 +71,17 @@ namespace webapi.Migrations
                         new
                         {
                             Id = 1,
-                            Image = "cheese.jpg",
-                            Name = "Cheeseburger",
-                            Price = 25.00m,
+                            Image = "dblcheese.jpg",
+                            Name = "Double Cheeseburger",
+                            Price = 4.00m,
                             Type = "Burger"
                         },
                         new
                         {
                             Id = 2,
-                            Image = "dblcheese.jpg",
-                            Name = "Double Cheeseburger",
-                            Price = 40.00m,
+                            Image = "cheese.jpg",
+                            Name = "Cheeseburger",
+                            Price = 2.50m,
                             Type = "Burger"
                         },
                         new
@@ -89,39 +89,103 @@ namespace webapi.Migrations
                             Id = 3,
                             Image = "burger.jpg",
                             Name = "Hamburger",
-                            Price = 20.00m,
+                            Price = 2.00m,
                             Type = "Burger"
                         },
                         new
                         {
                             Id = 4,
-                            Image = "fries.jpg",
-                            Name = "French fries",
-                            Price = 15.00m,
-                            Type = "Side Order"
+                            Image = "chickenburger.jpg",
+                            Name = "Chicken burger",
+                            Price = 3.00m,
+                            Type = "Burger"
                         },
                         new
                         {
                             Id = 5,
-                            Image = "water.jpg",
-                            Name = "Sparkling Water",
-                            Price = 10.00m,
-                            Type = "Drink"
+                            Image = "veggieburger.jpg",
+                            Name = "Veggie burger",
+                            Price = 3.00m,
+                            Type = "Burger"
                         },
                         new
                         {
                             Id = 6,
-                            Image = "nukacola.jpg",
-                            Name = "Nuka-Cola",
-                            Price = 15.00m,
-                            Type = "Drink"
+                            Image = "fries.jpg",
+                            Name = "French fries",
+                            Price = 1.50m,
+                            Type = "Side Order"
                         },
                         new
                         {
                             Id = 7,
-                            Image = "nukaorange.jpg",
-                            Name = "Nuka-Orange",
-                            Price = 15.00m,
+                            Image = "cheesefries.jpg",
+                            Name = "Cheese fries",
+                            Price = 2.00m,
+                            Type = "Side Order"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Image = "mayodip.jpg",
+                            Name = "Mayo dip",
+                            Price = 0.50m,
+                            Type = "Side Order"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Image = "garlicdip.jpg",
+                            Name = "Garlic dip",
+                            Price = 0.50m,
+                            Type = "Side Order"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Image = "guacamole.jpg",
+                            Name = "Guacamole",
+                            Price = 1.00m,
+                            Type = "Side Order"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Image = "cocacola.jpg",
+                            Name = "Coca-cola",
+                            Price = 1.00m,
+                            Type = "Drink"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Image = "cokezero.jpg",
+                            Name = "Coke zero",
+                            Price = 1.00m,
+                            Type = "Drink"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Image = "fanta.jpg",
+                            Name = "Fanta",
+                            Price = 1.00m,
+                            Type = "Drink"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Image = "sprite.jpg",
+                            Name = "Sprite",
+                            Price = 1.00m,
+                            Type = "Drink"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Image = "drpepper.jpg",
+                            Name = "Dr Pepper",
+                            Price = 1.00m,
                             Type = "Drink"
                         });
                 });
