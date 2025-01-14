@@ -6,17 +6,15 @@ const OrderContext = createContext();
 export const OrderProvider = ({ children }) => {
 
   const [orderItems, setOrderItems] = useState([]); 
-  //   { name: "Cheeseburger", quantity: 1, price: 5 },
-  //   { name: "French Fries", quantity: 1, price: 3 },
-  //   { name: "Coke zero",    quantity: 1, price: 2 } 
-  // ]);
+  const [burgerOrder, setBurgerOrder ] = useState({orderItems:[]})
 
   return (
     <OrderContext.Provider
       value={{
         orderItems,
         setOrderItems,
-
+        burgerOrder,
+        setBurgerOrder
       }}
     >
       {children}

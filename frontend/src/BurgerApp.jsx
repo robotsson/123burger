@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './BurgerApp.css';
 import SelectProducts from './SelectProducts';
@@ -7,7 +6,7 @@ import OrderConfirmed from './OrderConfirmed';
 import { OrderProvider } from './OrderContext';
 
 export default function BurgerApp() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
   
   console.log("hello console");
 

@@ -38,13 +38,13 @@ export default function SelectProducts()
   useEffect( () => {
     fetch('https://localhost:7210/api/burgerproducts')
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+        if( !response.ok ) {
+          throw new Error('fetch response not ok');
         }
         return response.json();
       })
-      .then(data => setProductList(data))
-      .catch(error => console.error('There has been a problem with your fetch operation:', error));
+      .then( data => setProductList(data) )
+      .catch( error => console.error('fetch error:', error) );
   }, [] );
 
   return (

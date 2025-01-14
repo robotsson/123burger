@@ -1,40 +1,44 @@
 import './OrderConfirmed.css'
 import OrderSummary from './OrderSummary';
 import { useState, useEffect } from 'react';
+import { useOrderContext } from './OrderContext';
 
 function OrderConfirmed() 
 {
-  const [orderId, setOrderId] = useState(4711)
+  const [orderId, setOrderId] = useState(47110);
+  const { burgerOrder, setBurgerOrder } = useOrderContext();  
 
-  useEffect( () => {
-    fetch('https://localhost:7210/api/burgerorders', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          orderTotal: 250,
-          orderDate: (new Date()).toISOString(),
-          orderItems: [
-            {
-              quantity: 10,
-              burgerProductId: 1
-            }
-          ]
+  useEffect( () => {  
+    
+    console.log("OrderConfirmed useEffect");
+    console.log(burgerOrder);
+    
+    if( !burgerOrder.sent ) {
+
+      burgerOrder.sent = true;
+
+      fetch('https://localhost:7210/api/burgerorders', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(burgerOrder)
         })
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then( data => { 
-        setOrderId(data.id); 
-        console.log(data); 
-      })
-      .catch( error => console.log(error) );
-  }, [] );
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then( data => { 
+          
+          setOrderId(data.id); 
+          console.log(data); 
+        })
+        .catch( error => console.log(error) );
+    } // if !burgerOrder
+
+  }, [] ); // useEffect
 
   return (
     <>
