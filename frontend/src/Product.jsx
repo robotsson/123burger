@@ -20,8 +20,8 @@ export default function Product({id, name, price})
       newOrderItems.push( newObject );
     }
 
-    console.log(newOrderItems);
-    console.log(id +" "+ name +" "+ price);
+    // console.log(newOrderItems);
+    // console.log(id +" "+ name +" "+ price);
 
     setOrderItems(newOrderItems);
   }

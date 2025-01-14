@@ -5,7 +5,7 @@ export default function OrderSummary({bottommargin,rightmargin})
   
   const { orderItems } = useOrderContext();   
 
-  console.log(orderItems);
+  console.table(orderItems);
 
   // var orderItemsx = [ 
   //                     { name: "Cheeseburger", quantity: 1, price: 5 },
