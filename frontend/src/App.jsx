@@ -27,7 +27,7 @@ function App() {
           </div>
          
           {/* pages */}
-          <div className="flex flex-grow flex-col bg-purple-50">
+          <div className="flex flex-grow flex-col">
             <Routes>        
               <Route path="/" element={<OrderPage />} /> 
               <Route path="/PayOrder" element={<ConfirmPayment />} />

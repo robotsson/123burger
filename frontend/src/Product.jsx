@@ -21,13 +21,13 @@ export default function Product({index, name, price})
     }
 
     console.log(newOrderItems);
-    console.log(index +" "+ name +" "+ price);
+    console.log(name +" "+ price);
 
     setOrderItems(newOrderItems);
   }
 
   return (
-    <div key={index} className="rounded-lg shadow-md bg-blue-100 h-40" onClick={productClickHandler}>
+    <div className="rounded-lg shadow-md bg-blue-200 h-40" onClick={productClickHandler}>
       {name} {price} €
     </div>
   )
