@@ -39,7 +39,9 @@ brew install mssql-tools18
 
 ### Install Entity Framework packages and tools
 
-In the project folder I have used the dotnet command line tools for package installation:<p>
+Enter the `webapi/` directory, it at the top level of the project root directory
+
+Then use the dotnet command line tools for package installation:<p>
 ```
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore
