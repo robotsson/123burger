@@ -4,6 +4,7 @@ Developed with React and Tailwind (Frontend), and ASP.NET and Entity Framework (
 
 Requires SQL server. Other tools used: Vite, Yarn.
 
+<img src="frontend/src/assets/screenshot.jpg" alt="screenshot of burger order app" width="400">
 
 
 ## How to install and run 
