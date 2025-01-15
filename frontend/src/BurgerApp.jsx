@@ -19,7 +19,7 @@ export default function BurgerApp() {
           {/* page header */}
           <div className="bg-white h-24 mb-3 w-full">
             <div className="flex w-full h-full justify-center items-center">
-              <h1 className="text-purple-600 font-bold text-center">
+              <h1 className="[text-shadow:_1px_1px_1px_rgb(0_0_0_/_100%)] text-purple-600 font-semibold text-center">
                 &#127828;&ensp;
                 <Link className="font-bold" to="/">1</Link>
                 <Link className="font-bold" to="/PayOrder">2</Link>
