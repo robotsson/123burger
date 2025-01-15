@@ -1,4 +1,6 @@
-# ASP.Net Web API 
+# Burger restaurant order kiosk backend 
+
+## ASP.Net Web API 
 Web API for handling products and orders implemented in C# using Entity Framework and SQL Server.<p>
 
 ## How to run the application
