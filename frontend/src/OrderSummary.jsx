@@ -1,6 +1,6 @@
 import { useOrderContext } from './OrderContext';
 
-export default function OrderSummary({bottommargin,rightmargin}) 
+export default function OrderSummary({bottommargin,rightmargin,itemfont}) 
 {
   
   const { orderItems } = useOrderContext();   
@@ -26,10 +26,10 @@ export default function OrderSummary({bottommargin,rightmargin})
         Order:
       </div>
 
-      <div className="flex flex-grow flex-col px-10 py-5 overflow-y-auto">
+      <div className={`flex flex-grow flex-col px-10 py-5 overflow-y-auto ${itemfont}`}>
         {orderItems.map((item, index) => (
           <div key={index} className="flex justify-between">
-            <span>{item.quantity} {item.name}</span>
+            <span>{item.quantity}&emsp;{item.name}</span>
             <span>{item.price} €</span>
           </div>
         ))}

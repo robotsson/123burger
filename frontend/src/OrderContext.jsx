@@ -6,7 +6,7 @@ const OrderContext = createContext();
 export const OrderProvider = ({ children }) => {
 
   const [orderItems, setOrderItems] = useState([]); 
-  const [burgerOrder, setBurgerOrder ] = useState({orderItems:[]})
+  const [burgerOrder, setBurgerOrder ] = useState({})
 
   return (
     <OrderContext.Provider

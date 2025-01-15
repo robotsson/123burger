@@ -3,6 +3,29 @@ import { Link } from 'react-router-dom';
 import Products from './Products';
 import OrderSummary from './OrderSummary';
 import { useState, useEffect } from 'react';
+import { useOrderContext } from './OrderContext';
+
+
+function PayButton({isDisabled}) {
+
+  if( !isDisabled )
+  {
+    return (
+      <Link className="" to="/PayOrder">
+      <div className="duration-100 active:scale-95 hover:bg-green-100 hover:border-slate-600 bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
+        Pay
+      </div>
+      </Link>
+    )
+  } else
+  {
+    return (
+      <div className="opacity-25 bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
+      Pay
+      </div>
+    )
+  }
+}
 
 export default function SelectProducts() 
 {
@@ -34,6 +57,7 @@ export default function SelectProducts()
 
                          
   const [productList, setProductList] = useState(emptyProductList)
+  const { orderItems } = useOrderContext();   
 
   useEffect( () => {
     fetch('https://localhost:7210/api/burgerproducts')
@@ -47,6 +71,8 @@ export default function SelectProducts()
       .catch( error => console.error('fetch error:', error) );
   }, [] );
 
+
+  
   return (
 
     <>
@@ -55,11 +81,8 @@ export default function SelectProducts()
       <div className="flex flex-row"> 
         <OrderSummary height="h-42" rightmargin="mr-2"/> 
     
-        <Link className="" to="/PayOrder">
-          <div className="duration-100 active:scale-95 hover:bg-green-100 hover:border-slate-600 bg-green-50 border-2 border-green-600 rounded-lg ml-2 text-3xl font-bold text-slate-700 w-44 h-44 flex shadow-lg items-center justify-center">
-            Pay
-          </div>
-        </Link>
+        <PayButton isDisabled={orderItems <= 0}/>
+
       </div>
 
   

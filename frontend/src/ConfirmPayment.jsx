@@ -38,7 +38,7 @@ export default function ConfirmPayment()
 
   return (
     <>
-      <OrderSummary />
+      <OrderSummary itemfont="text-xl"/>
 
       <div className="flex-end">
         <Link className="bbb" to="/OrderConfirmed"> 
