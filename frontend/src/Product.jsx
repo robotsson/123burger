@@ -1,7 +1,6 @@
 import { useOrderContext } from './OrderContext';
-import productimg from '/src/assets/dblcheese.jpg'
+// import productimg from '/src/assets/dblcheese.jpg'
 // import productimg2 from '/images/dblcheese.jpg'
-import './Product.css';
 
 export default function Product({id, name, price, filename}) 
 {
@@ -34,15 +33,9 @@ export default function Product({id, name, price, filename})
     setOrderItems(newOrderItems);
   }
 
-  var imgurl = getImageURL(`/src/assets/${filename}`);
+  // var imgurl = getImageURL(`/src/assets/${filename}`);
   // console.log(imgurl);
-  // var filename = "dblcheese.jpg";
-  // var bgimg = `bg-[url('/src/assets/${filename}')]`;
-  // var bgimg = `bg-[url('/${filename}')]`;
-  // var bgimg = `bg-[url('${imgurl}')]`;
-  // var bgimg = `bg-[url('/src/assets/${filename}')]`;
-  var bgimg = `bg-[url('${imgurl}')]`;
-  // console.log(bgimg);
+
   
   return (
     <div 
