@@ -26,6 +26,6 @@ To run the project use:
 
 ```yarn dev``` 
 
-Then press o to open the fronted in the browser 
+Then press o to open the frontend in the browser 
 
 
