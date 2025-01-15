@@ -67,3 +67,4 @@ dotnet run
 ```
 
 The database should be found on the SQL server as "BurgerBase". 
+The Web API has a swagger interface, found at /swagger/ on the web server.
