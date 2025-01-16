@@ -29,11 +29,11 @@ function PayButton({isDisabled}) {
 
 export default function SelectProducts() 
 {
-  var emptyProductList = [ { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
-                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
-                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, 
-                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 },
-                           { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }, { id: 0, name:"", price:0 }
+  var emptyProductList = [ { id: 0, name:"A", price:0 }, { id: 0, name:"B", price:0 }, { id: 0, name:"C", price:0 }, 
+                           { id: 0, name:"D", price:0 }, { id: 0, name:"E", price:0 }, { id: 0, name:"F", price:0 }, 
+                           { id: 0, name:"G", price:0 }, { id: 0, name:"H", price:0 }, { id: 0, name:"I", price:0 }, 
+                           { id: 0, name:"J", price:0 }, { id: 0, name:"K", price:0 }, { id: 0, name:"L", price:0 },
+                           { id: 0, name:"M", price:0 }, { id: 0, name:"N", price:0 }, { id: 0, name:"O", price:0 }
                          ];
  
   // what /api/burgerproduct returns

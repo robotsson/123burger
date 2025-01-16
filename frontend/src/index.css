@@ -72,3 +72,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: Gluten;
+  src: url(assets/fonts/Gluten-SemiBold.ttf);
+}
+
+h1 {
+  font-family: Gluten;
+}

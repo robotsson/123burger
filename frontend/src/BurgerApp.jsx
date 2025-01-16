@@ -4,6 +4,7 @@ import SelectProducts from './SelectProducts';
 import ConfirmPayment from './ConfirmPayment';
 import OrderConfirmed from './OrderConfirmed';
 import { OrderProvider } from './OrderContext';
+import { H2Icon } from '@heroicons/react/20/solid';
 
 export default function BurgerApp() {
   // const [count, setCount] = useState(0)
@@ -19,7 +20,7 @@ export default function BurgerApp() {
           {/* page header */}
           <div className="bg-white h-24 mb-3 w-full">
             <div className="flex w-full h-full justify-center items-center">
-              <h1 className="[text-shadow:_1px_1px_1px_rgb(0_0_0_/_100%)] text-purple-600 font-semibold text-center">
+              <h1 className="text-7xl [text-shadow:_1px_1px_1px_rgb(0_0_0_/_100%)] text-purple-600 font-semibold text-center">
                 &#127828;&ensp;
                 <Link className="font-bold" to="/">1</Link>
                 <Link className="font-bold" to="/PayOrder">2</Link>
@@ -39,11 +40,11 @@ export default function BurgerApp() {
 
           {/* secret footer */}
           <div className="flex flex-row bg-white my-2">
-            <h1 className="text-white text-center">
+            <div className="text-4xl text-white text-center">
               <Link className="text-white hover:text-slate-100" to="/">1. Products</Link>&ensp;
               <Link className="text-white hover:text-slate-100" to="/PayOrder">2. Pay Order</Link>&ensp;
               <Link className="text-white hover:text-slate-100" to="/OrderConfirmed">3. Confirmed</Link>
-            </h1>
+            </div>
           </div>
 
         </div>
