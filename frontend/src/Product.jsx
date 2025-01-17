@@ -59,6 +59,7 @@ export default function Product({id, name, price, filename})
         backgroundImage: `url('/src/assets/${filename}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundColor: 'white'
       }}
       >  
       

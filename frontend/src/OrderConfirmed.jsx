@@ -42,7 +42,7 @@ function OrderConfirmed()
 
   return (
     <>
-      <div className="flex flex-col flex-grow rounded-lg justify-evenly border mb-3 text-5xl font-bold  items-center shadow-md">
+      <div className="bg-white flex flex-col flex-grow rounded-lg justify-evenly border mb-3 text-5xl font-bold  items-center shadow-md">
           Thank you, order received.<br></br><br></br>
           Your order is #{orderId}
       </div>
